@@ -32,3 +32,13 @@ function atualizarCarrinho() {
 
   document.getElementById("total").innerText = total;
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const aviao = document.getElementById("aviao");
+  const mensagem = document.getElementById("mensagem");
+
+  // Quando a animação terminar, mostra a mensagem
+  aviao.addEventListener("animationend", () => {
+    aviao.style.display = "none";
+    mensagem.style.display = "inline";
+  });
+});
