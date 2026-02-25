@@ -42,3 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
     mensagem.style.display = "inline";
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const coracao = document.getElementById("coracao");
+  const texto = document.getElementById("texto-marca");
+
+  coracao.addEventListener("animationend", () => {
+    coracao.style.display = "none";
+    texto.style.display = "block";
+  });
+});
