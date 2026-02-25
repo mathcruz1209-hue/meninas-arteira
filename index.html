@@ -7,52 +7,59 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>MENINA ARTEIRA</h1>
-  <p>GARANTA A SUA ARTERINHA</p>
+<h1>Meninas arteiras Loja oficical</h1>
 
-  <!-- Total no canto superior direito -->
-  <div id="carrinho-total">
-    Total: R$ <span id="total">0</span>
-  </div>
+<div id="carrinho-total">
+  Total: R$ <span id="total">0</span>
+</div>
 
-  <!-- Produtos -->
+<div class="produtos-container">
   <div class="produto">
     <img src="img/arterinha.jpg" alt="Boneca Arteirinha" width="200">
     <p>Arteirinha - R$89,00</p>
-    <button onclick="adicionar(89)">Adicionar ao carrinho</button>
+    <button onclick="adicionar('Arteirinha', 89)">Adicionar ao carrinho</button>
   </div>
 
   <div class="produto">
     <img src="img/kits.jpg" alt="Kits pedagógicos" width="200">
     <p>Kits pedagógicos - R$149,00</p>
-    <button onclick="adicionar(149)">Adicionar ao carrinho</button>
+    <button onclick="adicionar('Kits pedagógicos', 149)">Adicionar ao carrinho</button>
   </div>
 
   <div class="produto">
     <img src="img/casal.jpg" alt="Casal preto velho" width="200">
     <p>Casal preto velho - R$89,00</p>
-    <button onclick="adicionar(89)">Adicionar ao carrinho</button>
+    <button onclick="adicionar('Casal preto velho', 89)">Adicionar ao carrinho</button>
   </div>
 
   <div class="produto">
     <img src="img/lendas.jpg" alt="Lendas brasileiras" width="200">
     <p>Lendas brasileiras - R$89,00</p>
-    <button onclick="adicionar(89)">Adicionar ao carrinho</button>
+    <button onclick="adicionar('Lendas brasileiras', 89)">Adicionar ao carrinho</button>
   </div>
 
   <div class="produto">
     <img src="img/arterinhas.jpg" alt="Arterinhas" width="200">
     <p>Arterinhas - R$89,00</p>
-    <button onclick="adicionar(89)">Adicionar ao carrinho</button>
+    <button onclick="adicionar('Arterinhas', 89)">Adicionar ao carrinho</button>
   </div>
 
   <div class="produto">
     <img src="img/sereias.jpg" alt="Sereias" width="200">
     <p>Sereias - R$89,00</p>
-    <button onclick="adicionar(89)">Adicionar ao carrinho</button>
+    <button onclick="adicionar('Sereias', 89)">Adicionar ao carrinho</button>
   </div>
+</div>
 
-  <script src="script.js"></script>
+<!-- Carrinho detalhado -->
+<div id="carrinho">
+  <h2>Seu Carrinho</h2>
+  <ul id="lista-carrinho"></ul>
+</div>
+
+<script src="script.js"></script>
+  
+  <p2>51 98611-0242</p2>
 </body>
 </html>
 
