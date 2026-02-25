@@ -62,5 +62,6 @@ function finalizarCompra() {
    });
    mensagem += `\nTotal: R${total.toFixed(2)}`;
 
-   let url = `https://wa.me/51986110242?text=${encodeURIComponent(mensagem)}`;
+   let url = `<a href="https://wa.me/qr/QC6KOVJTEZHFA1"target="_blank">?text=${encodeURIComponent(mensagem)}`;
 }
+
