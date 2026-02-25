@@ -51,3 +51,16 @@ document.addEventListener("DOMContentLoaded", () => {
     texto.style.display = "block";
   });
 });
+total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+
+
+function finalizarCompra() {
+  let mensagem = "Olá! Quero compra:\n";
+   
+   carrinho.forEach(p => {
+    mensagem += `-${p.nome} x${p.quantidade}\n`;
+   });
+   mensagem += `\nTotal: R${total.toFixed(2)}`;
+
+   let url = `https://wa.me/51986110242?text=${encodeURIComponent(mensagem)}`;
+}
