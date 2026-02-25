@@ -140,6 +140,69 @@ p2{
   font-weight: bold;
   margin-left: 10px;
 }
+#instagram {
+  text-align: center;
+  margin-top: 20px;
+}
 
+#instagram a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
 
+.icone-insta {
+  width: 24px;  /* tamanho pequeno */
+  height: 24px;
+}
+#whatsapp {
+  text-align: center;
+  margin-top: 10px;
+}
 
+#whatsapp a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icone-whats {
+  width: 24px;  /* tamanho pequeno */
+  height: 24px;
+}
+#animacao-texto {
+  text-align: center;
+  margin: 15px auto;
+  max-width: 600px;   /* largura menor */
+  font-size: 1.em;   /* fonte bem menor */
+  line-height: 1.4;   /* altura de linha mais compacta */
+  color: #333;
+  background: none;   /* sem fundo */
+}
+
+#coracao {
+  display: inline-block;
+  position: relative;
+  font-size: 1.2em;   /* coração menor */
+  animation: pulsar 2s ease forwards;
+}
+
+@keyframes pulsar {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+#texto-marca {
+  margin-top: 10px;
+  font-weight: 400;   /* mais leve */
+  font-size: 0.85em;  /* texto menor */
+  color: #5a4634;     /* tom bege escuro */
+  background: none;   /* sem fundo */
+}
