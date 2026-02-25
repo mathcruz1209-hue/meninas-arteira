@@ -1,6 +1,34 @@
+let carrinho = [];
 let total = 0;
 
-function adicionar(preco) {
-  total += preco;
+function adicionar(nome, preco) {
+  let item = carrinho.find(p => p.nome === nome);
+  if (item) {
+    item.quantidade++;
+  } else {
+    carrinho.push({ nome, preco, quantidade: 1 });
+  }
+  
+  atualizarCarrinho();
+}
+
+function remover(nome) {
+  carrinho = carrinho.filter(p => p.nome !== nome);
+  atualizarCarrinho();
+}
+
+function atualizarCarrinho() {
+  let lista = document.getElementById("lista-carrinho");
+  lista.innerHTML = "";
+  total = 0;
+
+  carrinho.forEach(p => {
+    total += p.preco * p.quantidade;
+    let li = document.createElement("li");
+    li.innerHTML = `${p.nome} - R$${p.preco} x ${p.quantidade} 
+      <button onclick="remover('${p.nome}')">Remover</button>`;
+    lista.appendChild(li);
+  });
+
   document.getElementById("total").innerText = total;
 }
