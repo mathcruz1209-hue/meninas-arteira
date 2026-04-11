@@ -58,12 +58,40 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 
 /* Imagens */
 .produto img {
-  border-radius: 10px;
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 15px;
-  transition: transform 0.3s;
+ 
+content: 'Bonecas';
+position: absolute;
+top: 23%;
+left: -20%;
+font-size: 12em;
+font-weight: 800;
+font-style: italic;
+color: #f5f4f4;
+opacity: 7;
+
 }
+.produtos-container .card .imgBx{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  transition: 0,5s;
+}
+.container
+  .card .contentBx
+   .size span:hover{
+   background: #237fea
+   }
+   .container
+   .card .contentBx
+   .color span{
+    width: 20px;
+    height: 20px;
+    background: #ff0;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+   }
 
 .produto img:hover {
   transform: scale(1.05);
@@ -226,4 +254,24 @@ p2{
   text-decoration: none;
   font-weight: bold;
 }
-
+.navigation {
+  width: 420px;
+  height: 70px;
+  background: #209cff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  border-radius: 10px;
+}
+.navigation ul {
+  display: flex;
+  width: 350px;
+}
+.navigation ul li{
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
