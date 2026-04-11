@@ -1,179 +1,277 @@
-/* Fonte */
+/* Fonte moderna */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-:root {
-  --bg: #f8f6f2;
-  --card: #ffffff;
-  --primary: #c19a6b;
-  --primary-dark: #a67c52;
-  --text: #2c2c2c;
-  --muted: #777;
-  --radius: 14px;
-}
-
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  background-color: #f5f5dc; /* bege claro */
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-/* ===== HEADER FIXO (estilo app) ===== */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: white;
-  padding: 12px 15px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header h1 {
-  font-size: 1.2em;
-}
-
-#carrinho-total {
-  background: var(--primary);
-  color: white;
-  padding: 6px 10px;
-  border-radius: 20px;
-  font-size: 0.8em;
-}
-
-/* ===== HERO ===== */
-.hero {
-  padding: 25px 15px;
+/* Cabeçalho */
+h1 {
   text-align: center;
+  background: linear-gradient(90deg, #d2b48c, #c19a6b); /* tons de bege */
+  color: white;
+  padding: 25px;
+  margin: 0;
+  font-size: 2.5em;
+  letter-spacing: 2px;
 }
 
-.hero h2 {
-  font-size: 1.4em;
+/* Total no canto superior direito */
+#carrinho-total {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #c19a6b; /* bege mais escuro */
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Container dos produtos em grid */
+.produtos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 60px 80px;
+}
+
+/* Cada produto */
+.produto {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Imagens */
+.produto img {
+ 
+content: 'Bonecas';
+position: absolute;
+top: 23%;
+left: -20%;
+font-size: 12em;
+font-weight: 800;
+font-style: italic;
+color: #f5f4f4;
+opacity: 7;
+
+}
+.produtos-container .card .imgBx{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  transition: 0,5s;
+}
+.container
+  .card .contentBx
+   .size span:hover{
+   background: #237fea
+   }
+   .container
+   .card .contentBx
+   .color span{
+    width: 20px;
+    height: 20px;
+    background: #ff0;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+   }
+
+.produto img:hover {
+  transform: scale(1.05);
+}
+
+/* Botões */
+button {
+  background: #d2b48c; /* bege médio */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: #c19a6b; /* bege mais escuro */
+  transform: scale(1.05);
+}
+
+/* Carrinho detalhado */
+#carrinho {
+  background: #fffaf0; /* bege bem claro */
+  margin: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#carrinho h2 {
+  color: #c19a6b;
+  margin-bottom: 15px;
+}
+p{
+  text-align: center;
+  background: linear-gradient(90deg, #d2b48c, #c19a6b); /* tons de bege */
+  color: white;
+  padding: 25px;
+  margin: 0;
+  font-size: 2.5em;
+  letter-spacing: 2px;
+}
+p2{ 
+   text-align: center;
+  background: linear-gradient(90deg, #d2b48c, #c19a6b); /* tons de bege */
+  color: white;
+  padding: 5px;
+  margin: 0;
+  font-size: 2.5em;
+  letter-spacing: 2px;
+}
+#animacao {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.5em;
+  position: relative;
+}
+
+#aviao {
+  display: inline-block;
+  position: relative;
+  animation: voar 3s linear forwards;
+}
+
+@keyframes voar {
+  from { left: -200px; }
+  to { left: 200px; }
+}
+
+#mensagem {
+  color: #c19a6b; /* bege escuro */
+  font-weight: bold;
+  margin-left: 10px;
+}
+#instagram {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#instagram a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icone-insta {
+  width: 24px;  /* tamanho pequeno */
+  height: 24px;
+}
+#whatsapp {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#whatsapp a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icone-whats {
+  width: 24px;  /* tamanho pequeno */
+  height: 24px;
+}
+#animacao-texto {
+  text-align: center;
+  margin: 15px auto;
+  max-width: 600px;   /* largura menor */
+  font-size: 1.em;   /* fonte bem menor */
+  line-height: 1.4;   /* altura de linha mais compacta */
+  color: #333;
+  background: none;   /* sem fundo */
+}
+
+#coracao {
+  display: inline-block;
+  position: relative;
+  font-size: 1.2em;   /* coração menor */
+  animation: pulsar 2s ease forwards;
+}
+
+@keyframes pulsar {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+#texto-marca {
+  margin-top: 10px;
+  font-weight: 400;   /* mais leve */
+  font-size: 0.85em;  /* texto menor */
+  color: #5a4634;     /* tom bege escuro */
+  background: none;   /* sem fundo */
+}
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(90deg, #d2b48c, #c19a6b);
+  color: white;
 }
 
 .subtitulo {
-  font-size: 0.95em;
-  color: var(--muted);
-  margin: 10px 0;
+  font-size: 1.2em;
+  margin: 15px 0;
 }
 
 .btn-principal {
-  display: inline-block;
-  background: var(--primary);
-  color: white;
-  padding: 10px 18px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 0.9em;
-}
-
-/* ===== GRID ===== */
-.produtos-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  padding: 15px;
-}
-
-/* ===== CARD ===== */
-.produto {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 12px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: 0.2s;
-}
-
-.produto:active {
-  transform: scale(0.97);
-}
-
-/* Imagem */
-.produto img {
-  width: 100%;
-  max-width: 100px;
-  height: auto;
-  margin-bottom: 8px;
-}
-
-/* Nome */
-.produto h3 {
-  font-size: 0.9em;
-  margin-bottom: 4px;
-}
-
-/* Preço */
-.produto p {
-  font-size: 0.85em;
-  color: var(--muted);
-  margin-bottom: 8px;
-}
-
-/* Botão */
-button {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  background: var(--primary);
-  color: white;
-  font-size: 0.85em;
-  font-weight: 600;
-}
-
-button:active {
-  background: var(--primary-dark);
-}
-
-/* ===== CARRINHO ===== */
-#carrinho {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
   background: white;
-  border-radius: 20px 20px 0 0;
-  padding: 15px;
-  box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
-}
-
-/* ===== REDES ===== */
-#instagram,
-#whatsapp {
-  text-align: center;
-  margin: 10px 0;
-}
-
-#instagram a,
-#whatsapp a {
-  color: var(--text);
+  color: #c19a6b;
+  padding: 12px 25px;
+  border-radius: 8px;
   text-decoration: none;
-  font-size: 0.85em;
+  font-weight: bold;
 }
-
-/* ===== TABLET ===== */
-@media (min-width: 600px) {
-  .produtos-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.navigation {
+  width: 420px;
+  height: 70px;
+  background: #209cff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  border-radius: 10px;
 }
-
-/* ===== DESKTOP ===== */
-@media (min-width: 900px) {
-  .produtos-container {
-    grid-template-columns: repeat(4, 1fr);
-    padding: 30px;
-  }
-
-  header h1 {
-    font-size: 1.5em;
-  }
+.navigation ul {
+  display: flex;
+  width: 350px;
+}
+.navigation ul li{
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
 }
