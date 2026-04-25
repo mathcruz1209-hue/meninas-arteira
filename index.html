@@ -2,94 +2,541 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Menina Arteira</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meninas Arteiras</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#fff9f8;
+color:#222;
+}
+
+/* HEADER */
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.95);
+backdrop-filter:blur(10px);
+z-index:999;
+box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.logo{
+font-size:2rem;
+font-weight:800;
+color:#d46a92;
+}
+
+nav a{
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
+color:#333;
+transition:.3s;
+}
+
+nav a:hover{
+color:#d46a92;
+}
+
+/* HERO */
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 20px 40px;
+background:linear-gradient(135deg,#fff0f5,#ffe4ec,#fff8fa);
+}
+
+.hero h1{
+font-size:4rem;
+color:#d46a92;
+line-height:1.1;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:1.2rem;
+max-width:700px;
+margin:auto;
+color:#555;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:16px 34px;
+background:linear-gradient(90deg,#d46a92,#f19ab7);
+color:#fff;
+text-decoration:none;
+font-weight:700;
+border-radius:50px;
+box-shadow:0 10px 25px rgba(212,106,146,.3);
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+/* TITULO */
+.titulo{
+text-align:center;
+font-size:2.5rem;
+margin:70px 0 30px;
+color:#d46a92;
+font-weight:800;
+}
+
+/* PRODUTOS */
+.produtos{
+width:90%;
+max-width:1400px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+padding-bottom:70px;
+}
+
+.card{
+background:#fff;
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.info{
+padding:22px;
+}
+
+.info h3{
+font-size:1.2rem;
+margin-bottom:8px;
+}
+
+.info p{
+color:#777;
+font-size:.95rem;
+margin-bottom:12px;
+}
+
+.preco{
+font-size:1.5rem;
+font-weight:800;
+color:#d46a92;
+margin-bottom:15px;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:linear-gradient(90deg,#d46a92,#f19ab7);
+color:#fff;
+font-size:1rem;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.03);
+}
+
+/* BENEFICIOS */
+.beneficios{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+width:90%;
+max-width:1200px;
+margin:0 auto 80px;
+}
+
+.box{
+background:#fff;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.box h4{
+color:#d46a92;
+margin-bottom:10px;
+}
+
+/* WHATSAPP FIXO */
+.whats{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+color:#fff;
+padding:16px 22px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+z-index:999;
+}
+
+/* FOOTER */
+footer{
+background:#d46a92;
+color:#fff;
+text-align:center;
+padding:25px;
+margin-top:50px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.6rem;
+}
+
+nav{
+display:none;
+}
+
+.card img{
+height:260px;
+}
+
+}
+.direita{
+  background:#fff;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.06);
+/* ===================================
+   CARRINHO TOPO DIREITO PROFISSIONAL
+   =================================== */
+#carrinho-total{
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  background: linear-gradient(90deg,#d46a92,#f19ab7);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 12px 30px rgba(212,106,146,.25);
+  z-index: 9999;
+}
+
+
+#carrinho{
+  background: white;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.08);
+  max-width: 1000px;
+  width: 92%;
+}
+
+#carrinho h2{
+  color: #d46a92;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+/* LISTA */
+#lista-carrinho{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#lista-carrinho li{
+  background: #fff7fa;
+  padding: 16px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* BOTÃO REMOVER */
+#lista-carrinho button{
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#lista-carrinho button:hover{
+  opacity: .9;
+}
+
+/* TOTAL */
+#total{
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #d46a92;
+}
+
+/* BOTÃO FINALIZAR */
+/* TIRE A LINHA ROSA DO BOTÃO FINALIZAR */
+
+.btn-finalizar{
+
+cursor: pointer;
+}
+
+
+.btn-finalizar:hover{
+  transform: scale(1.02);
+}
+
+/* ===================================
+   PRODUTOS GRID
+   =================================== */
+/* TROQUE SEU CSS .produtos POR ESSE */
+
+.produtos{
+width:90%;
+max-width:1400px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+padding-bottom:70px;
+}
+
+/* RESPONSIVO */
+@media(max-width:1000px){
+.produtos{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:600px){
+.produtos{
+grid-template-columns:1fr;
+}
+}
+}
+</style>
 </head>
 <body>
-  <section class="hero">
-  <h1>Meninas Arteiras</h1>
-  <p class="subtitulo">
-    Bonecas negras e indígenas que carregam afeto, ancestralidade e alegria.
-  </p>
-<a 
-  href="https://www.instagram.com/meninaarteirabonecasdepano?igsh=MTU3bzZnc3U4emwzcA==" 
-  class="btn-principal" 
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Ver Catálogo completo, no Instagram 📸
+
+<header>
+<div class="logo">Meninas Arteiras</div>
+
+<nav>
+<a href="#">Início</a>
+<a href="#">Coleção</a>
+<a href="#">Promoções</a>
+<a href="#">Contato</a>
+</nav>
+</header>
+
+<section class="hero">
+<div>
+<h1>Bonecas Encantadoras<br>Para Momentos Inesquecíveis</h1>
+
+<p>Bonecas personalizadas carregadas de ancestralidade, diversidade e inclusão.</p>
+
+<a href="https://www.instagram.com/meninaarteirabonecasdepano?igsh=MTU3bzZnc3U4emwzcA==" 
+class="btn" target="_blank">
+Ver Coleção
 </a>
+</div>
 </section>
 
-<div id="animacao-texto">
-  <span id="coracao">❤️</span>
-  <p id="texto-marca" style="display:none;">
-    Somos uma marca de bonecas negras e indígenas de pano. 
-    Nascemos da inquietação de três mulheres negras — Helita, Tati e Mariana — diante da ausência de representatividade nos brinquedos de nossos filhos. 
-    Trouxemos para o mundo lúdico da brincadeira a inclusão, a diversidade e o protagonismo negro e indígena, através das nossas Arteirinhas, bonecas que carregam afeto, ancestralidade e alegria. 
-    Somos de Porto Alegre.
-  </p>
+<h2 class="titulo" id="produtos">Coleção Exclusiva</h2>
+
+<section class="produtos">
+
+<!-- 1 -->
+<div class="card">
+<img src="img/arterinha.jpg">
+<div class="info">
+<h3>Arterinhas</h3>
+<p>Acabamento premium e vestido delicado.</p>
+<div class="preco">R$ 89,00</div>
+<button onclick="adicionar('Arterinhas',89)">Adicionar ao Carrinho</button>
+</div>
 </div>
 
-
-<div id="animacao">
-  <span id="aviao">✈️</span>
-  <span id="mensagem" style="display:none;">Entregamos pra todo Brasil</span>
+<!-- 2 -->
+<div class="card">
+<img src="img/kits.jpg">
+<div class="info">
+<h3>Kits Pedagógicos</h3>
+<p>Para melhorar o aprendizado.</p>
+<div class="preco">R$ 149,90</div>
+<button onclick="adicionar('Kits Pedagógicos',149.90)">Adicionar ao Carrinho</button>
+</div>
 </div>
 
-
+<!-- 3 -->
+<div class="card">
+<img src="img/sereias.jpg">
+<div class="info">
+<h3>Sereias</h3>
+<p>Modelo encantador.</p>
+<div class="preco">R$ 89,00</div>
+<button onclick="adicionar('Sereias',89)">Adicionar ao Carrinho</button>
 </div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+<img src="img/arterinhas.jpg">
+<div class="info">
+<h3>Boneca Luxo</h3>
+<p>Feita com carinho e elegância.</p>
+<div class="preco">R$ 89,00</div>
+<button onclick="adicionar('Boneca Luxo',89)">Adicionar ao Carrinho</button>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="card">
+<img src="img/moana.jpeg">
+<div class="info">
+<h3>A princesa do mar</h3>
+<p>Delicadeza para presentear.</p>
+<div class="preco">R$ 89,00</div>
+<button onclick="adicionar('O Casal Perfeito',89)">Adicionar ao Carrinho</button>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="card">
+<img src="img/lendas.jpg">
+<div class="info">
+<h3>Lendas Brasileiras</h3>
+<p>Edição especial exclusiva.</p>
+<div class="preco">R$ 89,00</div>
+<button onclick="adicionar('Lendas Brasileiras',89)">Adicionar ao Carrinho</button>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="card">
+<img src="img/baia.jpeg">
+<div class="info">
+<h3>Baiana</h3>
+<p>Modelo cultural premium.</p>
+<div class="preco">R$ 120,00</div>
+<button onclick="adicionar('Baiana',120)">Adicionar ao Carrinho</button>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="card">
+<img src="img/fadinha.jpeg">
+<div class="info">
+<h3>Fadinha Luxo</h3>
+<p>Modelo delicado especial.</p>
+<div class="preco">R$ 120,00</div>
+<button onclick="adicionar('Fadinha Luxo',120)">Adicionar ao Carrinho</button>
+</div>
+</div>
+
+</section>
+
+<section id="carrinho">
+
+<h2>🛒 Seu Carrinho</h2>
+
+<ul id="lista-carrinho"></ul>
+
+<div style="margin-top:20px; font-size:22px; font-weight:700;">
+Total: <span id="total">R$ 0,00</span>
+</div>
+
+<button class="btn-finalizar" onclick="finalizarCompra()">
+Finalizar Pedido no WhatsApp
+</button>
+
+</section>
+
 
 <div id="carrinho-total">
-  Total: R$ <span id="total">0</span>
+🛒 Carrinho: R$ 0,00
 </div>
 
-<div class="produtos-container">
-  <div class="produto">
-    <img src="img/arterinha.jpg" alt="Boneca Arteirinha" width="200">
-    <p1>Arteirinha - R$89,00</p1>
-    <button onclick="adicionar('Arteirinha', 89)">Adicionar ao carrinho</button>
-  </div>
 
-  <div class="produto">
-    <img src="img/kits.jpg" alt="Kits pedagógicos" width="200">
-    <p1>Kits pedagógicos - R$149,00</p1>
-    <button onclick="adicionar('Kits pedagógicos', 149)">Adicionar ao carrinho</button>
-  </div>
+</section>
 
-  <div class="produto">
-    <img src="img/casal.jpg" alt="Casal preto velho" width="200">
-    <p1>Casal preto velho - R$89,00</p1>
-    <button onclick="adicionar('Casal preto velho', 89)">Adicionar ao carrinho</button>
-  </div>
+<h2 class="titulo">Por Que Escolher?</h2>
 
-  <div class="produto">
-    <img src="img/lendas.jpg" alt="Lendas brasileiras" width="200">
-    <p1>Lendas brasileiras - R$89,00</p1>
-    <button onclick="adicionar('Lendas brasileiras', 89)">Adicionar ao carrinho</button>
-  </div>
+<section class="beneficios">
 
-  <div class="produto">
-    <img src="img/arterinhas.jpg" alt="Arterinhas" width="200">
-    <p1>Arterinhas - R$89,00</p1>
-    <button onclick="adicionar('Arterinhas', 89)">Adicionar ao carrinho</button>
-  </div>
-
-  <div class="produto">
-    <img src="img/sereias.jpg" alt="Sereias" width="200">
-    <p1>Sereias - R$89,00</p1>
-    <button onclick="adicionar('Sereias', 89)">Adicionar ao carrinho</button>
-  </div>
+<div class="box">
+<h4>Entrega Rápida</h4>
+<p>Receba em todo Brasil, com segurança e agilidade.</p>
 </div>
 
-<!-- Carrinho detalhado -->
-<div id="carrinho">
-  <h2>Seu Carrinho, Finalizar no WhatsApp </h2>
-  <ul id="lista-carrinho"></ul>
-  <button onclick="finalizarCompra()">Finalizar no WhatsApp</button>
+<div class="box">
+<h4>Qualidade Premium</h4>
+<p>Produtos escolhidos com cuidado.</p>
 </div>
+
+<div class="box">
+<h4>Atendimento VIP</h4>
+<p>Suporte direto pelo WhatsApp.</p>
+</div>
+
+<div class="box">
+<h4>Presente Ideal</h4>
+<p>Encante quem você ama.</p>
+</div>
+
+</section>
+
+<a class="whats" href="https://wa.me/55SEUNUMERO" target="_blank">WhatsApp</a>
+
+<footer>
+© 2026 Meninas Arteiras - Todos os direitos reservados
+</footer>
 
 <script src="script.js"></script>
   <div class="navigastion">
@@ -99,46 +546,7 @@
           </a>
     </li>      
 </div>
-  
- 
-  <div id="instagram">
-  <a href="https://www.instagram.com/meninaarteirabonecasdepano?igsh=MTU3bzZnc3U4emwzcA==" target="_blank">
-    <img src="img/OIP.jpg" alt="Instagram" class="icone-insta">
-    <span>@meninaarteirabonecasdepano</span>
-  </a>
-</div>
-<div id="whatsapp">
-  <a href="https://wa.me/51986110242" target="_blank">
-    <img src="img/zap.png" alt="WhatsApp" class="icone-whats">
-    <span>(51) 98611-0242</span>
-  </a>
-</div>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<header>
-  <h1>Minha Loja</h1>
-  <div id="carrinho-total">R$ 0</div>
-</header>
-
-<section class="hero">
-  <h2>Bem-vindo</h2>
-  <p class="subtitulo">As melhores bonecas aqui</p>
-  <a class="btn-principal">Ver produtos</a>
-</section>
-
-<div class="produtos-container">
-  <div class="produto">
-    <img src="img.jpg">
-    <h3>Produto</h3>
-    <p>R$ 50</p>
-    <button>Comprar</button>
-  </div>
-</div>
-
-<div id="carrinho">
-  <h3>Seu carrinho</h3>
-</div>
-
+</script>
 
 </body>
 </html>
