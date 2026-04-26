@@ -1,354 +1,42 @@
-
+```html id="9n9p8u"
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meninas Arteiras</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#fff9f8;
-color:#222;
-}
-
-/* HEADER */
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:18px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(255,255,255,0.95);
-backdrop-filter:blur(10px);
-z-index:999;
-box-shadow:0 5px 20px rgba(0,0,0,.05);
-}
-
-.logo{
-font-size:2rem;
-font-weight:800;
-color:#d46a92;
-}
-
-nav a{
-text-decoration:none;
-margin-left:25px;
-font-weight:500;
-color:#333;
-transition:.3s;
-}
-
-nav a:hover{
-color:#d46a92;
-}
-
-/* HERO */
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:120px 20px 40px;
-
-background:
-linear-gradient(rgba(255,240,245,0.78), rgba(255,240,245,0.78)),
-url("img/fundo.jpeg");
-
-background-size:cover;
-background-position:right center;
-background-repeat:no-repeat;
-}
-
-/* CELULAR */
-@media(max-width:768px){
-
-.hero{
-padding:100px 20px 40px;
-background-size:cover;
-background-position:65% center;
-}
-
-.hero h1{
-font-size:2.2rem;
-line-height:1.2;
-}
-
-.hero p{
-font-size:1rem;
-}
-
-.btn{
-display:inline-block;
-padding:16px 34px;
-background:linear-gradient(90deg,#d46a92,#f19ab7);
-color:#fff;
-text-decoration:none;
-font-weight:700;
-border-radius:50px;
-box-shadow:0 10px 25px rgba(212,106,146,.3);
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-}
-
-/* TITULO */
-.titulo{
-text-align:center;
-font-size:2.5rem;
-margin:70px 0 30px;
-color:#d46a92;
-font-weight:800;
-}
-
-/* PRODUTOS */
-.produtos{
-width:90%;
-max-width:1400px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:30px;
-padding-bottom:70px;
-}
-
-.card{
-background:#fff;
-border-radius:22px;
-overflow:hidden;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card img{
-width:100%;
-height:320px;
-object-fit:cover;
-}
-
-.info{
-padding:22px;
-}
-
-.info h3{
-font-size:1.2rem;
-margin-bottom:8px;
-}
-
-.info p{
-color:#777;
-font-size:.95rem;
-margin-bottom:12px;
-}
-
-.preco{
-font-size:1.5rem;
-font-weight:800;
-color:#d46a92;
-margin-bottom:15px;
-}
-
-button{
-width:100%;
-padding:14px;
-border:none;
-border-radius:12px;
-background:linear-gradient(90deg,#d46a92,#f19ab7);
-color:#fff;
-font-size:1rem;
-font-weight:700;
-cursor:pointer;
-transition:.3s;
-}
-
-button:hover{
-transform:scale(1.03);
-}
-
-/* CARRINHO */
-#carrinho-total{
-position:fixed;
-top:80px;
-right:20px;
-background:linear-gradient(90deg,#d46a92,#f19ab7);
-color:#fff;
-padding:12px 18px;
-border-radius:50px;
-font-weight:700;
-z-index:999;
-}
-
-#carrinho{
-background:#fff;
-width:90%;
-max-width:1000px;
-margin:50px auto;
-padding:30px;
-border-radius:22px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-}
-
-#carrinho h2{
-color:#d46a92;
-margin-bottom:20px;
-}
-
-#lista-carrinho{
-list-style:none;
-padding:0;
-}
-
-#lista-carrinho li{
-background:#fff7fa;
-padding:15px;
-border-radius:12px;
-margin-bottom:12px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px;
-flex-wrap:wrap;
-}
-
-#lista-carrinho button{
-width:auto;
-padding:10px 18px;
-background:#ff4d6d;
-}
-
-.btn-finalizar{
-width:auto;
-padding:14px 30px;
-display:block;
-margin:25px auto 0;
-background:linear-gradient(90deg,#25D366,#1ebe5d);
-border-radius:14px;
-}
-
-/* BENEFICIOS */
-.beneficios{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-width:90%;
-max-width:1200px;
-margin:0 auto 80px;
-}
-
-.box{
-background:#fff;
-padding:25px;
-border-radius:20px;
-text-align:center;
-box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-}
-
-.box h4{
-color:#d46a92;
-margin-bottom:10px;
-}
-
-/* WHATSAPP */
-.whats{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-color:#fff;
-padding:16px 22px;
-border-radius:50px;
-text-decoration:none;
-font-weight:700;
-z-index:999;
-}
-
-/* FOOTER */
-footer{
-background:#d46a92;
-color:#fff;
-text-align:center;
-padding:25px;
-margin-top:50px;
-}
-
-/* RESPONSIVO */
-@media(max-width:1000px){
-.produtos{
-grid-template-columns:repeat(2,1fr);
-}
-}
-
-@media(max-width:768px){
-
-nav{
-display:none;
-}
-
-.hero h1{
-font-size:2.6rem;
-}
-
-.card img{
-height:260px;
-}
-
-#carrinho-total{
-top:auto;
-bottom:80px;
-right:15px;
-}
-}
-
-@media(max-width:600px){
-.produtos{
-grid-template-columns:1fr;
-}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-<div class="logo">Meninas Arteiras</div>
+  <div class="logo">Meninas Arteiras</div>
 
-<nav>
-<a href="#">Início</a>
-<a href="#produtos">Coleção</a>
-<a href="#">Promoções</a>
-<a href="#">Contato</a>
-</nav>
+  <nav>
+    <a href="#">Início</a>
+    <a href="#produtos">Coleção</a>
+    <a href="#carrinho">Carrinho</a>
+    <a href="#contato">Contato</a>
+  </nav>
 </header>
 
 <section class="hero">
-<div>
-<h1>Bonecas Encantadoras<br>Para Momentos Inesquecíveis</h1>
-<p>Bonecas personalizadas carregadas de ancestralidade, diversidade e inclusão.</p>
+  <div class="hero-box">
+    <h1>Bonecas Encantadoras<br>Para Momentos Inesquecíveis</h1>
 
-<a href="https://www.instagram.com/meninaarteirabonecasdepano?igsh=MTU3bzZnc3U4emwzcA==" class="btn" target="_blank">
-Ver Coleção
-</a>
-</div>
+    <p>
+      Bonecas personalizadas carregadas de ancestralidade,
+      diversidade e inclusão.
+    </p>
+
+    <a href="#produtos" class="btn">
+      Ver Coleção
+    </a>
+  </div>
 </section>
 
 <h2 class="titulo" id="produtos">Coleção Exclusiva</h2>
@@ -359,9 +47,11 @@ Ver Coleção
 <img src="img/arterinha.jpg">
 <div class="info">
 <h3>Arterinhas</h3>
-<p>Modelo delicado.</p>
+<p>Modelo delicado artesanal.</p>
 <div class="preco">R$ 89,00</div>
-<button onclick="adicionar('Arterinhas',89)">Adicionar ao Carrinho</button>
+<button onclick="adicionar('Arterinhas',89)">
+Adicionar ao Carrinho
+</button>
 </div>
 </div>
 
@@ -369,9 +59,11 @@ Ver Coleção
 <img src="img/kits.jpg">
 <div class="info">
 <h3>Kits Pedagógicos</h3>
-<p>Aprendizado divertido.</p>
+<p>Aprendizado criativo.</p>
 <div class="preco">R$ 149,90</div>
-<button onclick="adicionar('Kits Pedagógicos',149.90)">Adicionar ao Carrinho</button>
+<button onclick="adicionar('Kits Pedagógicos',149.90)">
+Adicionar ao Carrinho
+</button>
 </div>
 </div>
 
@@ -381,27 +73,33 @@ Ver Coleção
 <h3>Sereias</h3>
 <p>Encanto especial.</p>
 <div class="preco">R$ 89,00</div>
-<button onclick="adicionar('Sereias',89)">Adicionar ao Carrinho</button>
+<button onclick="adicionar('Sereias',89)">
+Adicionar ao Carrinho
+</button>
 </div>
 </div>
 
 <div class="card">
-<img src="img/arterinhas.jpg">
+<img src="img/fadinha.jpeg">
 <div class="info">
-<h3>Boneca Luxo</h3>
-<p>Feita com carinho.</p>
-<div class="preco">R$ 89,00</div>
-<button onclick="adicionar('Boneca Luxo',89)">Adicionar ao Carrinho</button>
+<h3>Fadinha Luxo</h3>
+<p>Modelo premium.</p>
+<div class="preco">R$ 120,00</div>
+<button onclick="adicionar('Fadinha Luxo',120)">
+Adicionar ao Carrinho
+</button>
 </div>
 </div>
 
 <div class="card">
 <img src="img/moana.jpeg">
 <div class="info">
-<h3>A Princesa do Mar</h3>
+<h3>Princesa do Mar</h3>
 <p>Presente ideal.</p>
 <div class="preco">R$ 89,00</div>
-<button onclick="adicionar('Princesa do Mar',89)">Adicionar ao Carrinho</button>
+<button onclick="adicionar('Princesa do Mar',89)">
+Adicionar ao Carrinho
+</button>
 </div>
 </div>
 
@@ -411,7 +109,9 @@ Ver Coleção
 <h3>Lendas Brasileiras</h3>
 <p>Edição exclusiva.</p>
 <div class="preco">R$ 89,00</div>
-<button onclick="adicionar('Lendas Brasileiras',89)">Adicionar ao Carrinho</button>
+<button onclick="adicionar('Lendas Brasileiras',89)">
+Adicionar ao Carrinho
+</button>
 </div>
 </div>
 
@@ -421,17 +121,21 @@ Ver Coleção
 <h3>Baiana</h3>
 <p>Modelo cultural.</p>
 <div class="preco">R$ 120,00</div>
-<button onclick="adicionar('Baiana',120)">Adicionar ao Carrinho</button>
+<button onclick="adicionar('Baiana',120)">
+Adicionar ao Carrinho
+</button>
 </div>
 </div>
 
 <div class="card">
-<img src="img/fadinha.jpeg">
+<img src="img/arterinha.jpg">
 <div class="info">
-<h3>Fadinha Luxo</h3>
-<p>Modelo delicado.</p>
-<div class="preco">R$ 120,00</div>
-<button onclick="adicionar('Fadinha Luxo',120)">Adicionar ao Carrinho</button>
+<h3>Boneca Luxo</h3>
+<p>Feita com carinho.</p>
+<div class="preco">R$ 89,00</div>
+<button onclick="adicionar('Boneca Luxo',89)">
+Adicionar ao Carrinho
+</button>
 </div>
 </div>
 
@@ -443,7 +147,7 @@ Ver Coleção
 
 <ul id="lista-carrinho"></ul>
 
-<div style="margin-top:20px;font-size:22px;font-weight:700;">
+<div class="total-box">
 Total: <span id="total">R$ 0,00</span>
 </div>
 
@@ -463,7 +167,7 @@ Finalizar Pedido no WhatsApp
 
 <div class="box">
 <h4>Entrega Rápida</h4>
-<p>Receba com segurança e rapidez.</p>
+<p>Receba com segurança.</p>
 </div>
 
 <div class="box">
@@ -473,7 +177,7 @@ Finalizar Pedido no WhatsApp
 
 <div class="box">
 <h4>Atendimento VIP</h4>
-<p>Suporte direto no WhatsApp.</p>
+<p>Suporte no WhatsApp.</p>
 </div>
 
 <div class="box">
@@ -483,7 +187,9 @@ Finalizar Pedido no WhatsApp
 
 </section>
 
-<a class="whats" href="https://wa.me/55SEUNUMERO" target="_blank">
+<a class="whats" id="contato"
+href="https://wa.me/5551986110242"
+target="_blank">
 WhatsApp
 </a>
 
@@ -492,6 +198,6 @@ WhatsApp
 </footer>
 
 <script src="script.js"></script>
-
 </body>
-
+</html>
+```
