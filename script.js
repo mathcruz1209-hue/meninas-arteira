@@ -1,137 +1,88 @@
+// script.js
 
 let carrinho = [];
 let total = 0;
 
-/* ===============================
-   ADICIONAR PRODUTO
-   =============================== */
 function adicionar(nome, preco){
 
-  let item = carrinho.find(produto => produto.nome === nome);
+let item = carrinho.find(produto => produto.nome === nome);
 
-  if(item){
-    item.quantidade++;
-  }else{
-    carrinho.push({
-      nome: nome,
-      preco: preco,
-      quantidade: 1
-    });
-  }
-
-  atualizarCarrinho();
+if(item){
+item.quantidade++;
+}else{
+carrinho.push({
+nome:nome,
+preco:preco,
+quantidade:1
+});
 }
 
-/* ===============================
-   REMOVER PRODUTO
-   =============================== */
+atualizarCarrinho();
+}
+
 function remover(nome){
-  carrinho = carrinho.filter(produto => produto.nome !== nome);
-  atualizarCarrinho();
+
+carrinho = carrinho.filter(produto => produto.nome !== nome);
+
+atualizarCarrinho();
 }
 
-/* ===============================
-   ATUALIZAR CARRINHO
-   =============================== */
 function atualizarCarrinho(){
 
-  let lista = document.getElementById("lista-carrinho");
-  let totalSpan = document.getElementById("total");
-  let topo = document.getElementById("carrinho-total");
+let lista = document.getElementById("lista-carrinho");
+let totalSpan = document.getElementById("total");
+let topo = document.getElementById("carrinho-total");
 
-  lista.innerHTML = "";
-  total = 0;
+lista.innerHTML = "";
+total = 0;
 
-  carrinho.forEach(produto => {
+carrinho.forEach(produto => {
 
-    total += produto.preco * produto.quantidade;
+total += produto.preco * produto.quantidade;
 
-    let li = document.createElement("li");
+let li = document.createElement("li");
 
-    li.innerHTML = `
-      <div class="item-carrinho">
-        <span>${produto.nome}</span>
-        <span>R$ ${produto.preco.toFixed(2)} x ${produto.quantidade}</span>
-        <button onclick="remover('${produto.nome}')">Remover</button>
-      </div>
-    `;
+li.innerHTML = `
+<span>${produto.nome} x${produto.quantidade}</span>
+<button onclick="remover('${produto.nome}')">Remover</button>
+`;
 
-    lista.appendChild(li);
+lista.appendChild(li);
 
-  });
+});
 
-  totalSpan.innerText = total.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL"
-  });
+totalSpan.innerText = total.toLocaleString("pt-BR",{
+style:"currency",
+currency:"BRL"
+});
 
-  if(topo){
-    topo.innerText = "Carrinho: " + total.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL"
-    });
-  }
+topo.innerText = "🛒 Carrinho: " + total.toLocaleString("pt-BR",{
+style:"currency",
+currency:"BRL"
+});
 }
 
-/* ===============================
-   FINALIZAR COMPRA WHATSAPP
-   =============================== */
 function finalizarCompra(){
 
-  if(carrinho.length === 0){
-    alert("Seu carrinho está vazio.");
-    return;
-  }
-
-  let mensagem = "Olá! Quero comprar:%0A%0A";
-
-  carrinho.forEach(produto => {
-    mensagem += `• ${produto.nome} x${produto.quantidade}%0A`;
-  });
-
-  mensagem += `%0A💰 Total: ${total.toLocaleString("pt-BR", {
-    style:"currency",
-    currency:"BRL"
-  })}`;
-
-  let numero = "5551986110242";
-
-  let url = `https://wa.me/${numero}?text=${mensagem}`;
-
-  window.open(url, "_blank");
+if(carrinho.length === 0){
+alert("Seu carrinho está vazio.");
+return;
 }
 
-/* ===============================
-   ANIMAÇÃO AVIÃO
-   =============================== */
-document.addEventListener("DOMContentLoaded", () => {
+let mensagem = "Olá! Quero comprar:%0A%0A";
 
-  const aviao = document.getElementById("aviao");
-  const mensagem = document.getElementById("mensagem");
-
-  if(aviao && mensagem){
-    aviao.addEventListener("animationend", () => {
-      aviao.style.display = "none";
-      mensagem.style.display = "inline";
-    });
-  }
-
+carrinho.forEach(produto => {
+mensagem += `• ${produto.nome} x${produto.quantidade}%0A`;
 });
 
-/* ===============================
-   ANIMAÇÃO CORAÇÃO
-   =============================== */
-document.addEventListener("DOMContentLoaded", () => {
+mensagem += `%0A💰 Total: ${total.toLocaleString("pt-BR",{
+style:"currency",
+currency:"BRL"
+})}`;
 
-  const coracao = document.getElementById("coracao");
-  const texto = document.getElementById("texto-marca");
+let numero = "5551986110242";
 
-  if(coracao && texto){
-    coracao.addEventListener("animationend", () => {
-      coracao.style.display = "none";
-      texto.style.display = "block";
-    });
-  }
+let url = `https://wa.me/${numero}?text=${mensagem}`;
 
-});
-
+window.open(url,"_blank");
+}
