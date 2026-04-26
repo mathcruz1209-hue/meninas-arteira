@@ -255,7 +255,7 @@ background:#fff;
 padding:25px;
 border-radius:20px;
 text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.06);
+box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
 }
 
 .box h4{
